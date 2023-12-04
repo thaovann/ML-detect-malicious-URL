@@ -78,7 +78,7 @@ def get_prediction_from_url(test_url):
     features_test = np.array(features_test).reshape((1, -1))
     pred = rf.predict(features_test)
     if int(pred[0]) == 0:
-        return "SAFE"
+        return "BENGIN"
     elif int(pred[0]) == 1:
         return "DEFACEMENT"
     elif int(pred[0]) == 2:

@@ -8,14 +8,12 @@ import re
 from urllib.parse import urlparse
 from tld import get_tld
 import os.path
-
+from urllib.parse import urlparse
 from googlesearch import search
 
 
 # Load the dataset
 df = pd.read_csv("MaliciousURL.csv", nrows=1000)
-
-print(df.groupby("type").size())
 
 
 # ... Feature engineering code ...
@@ -36,12 +34,10 @@ def having_ip_address(url):
 
 
 df["use_of_ip"] = df["url"].apply(lambda i: having_ip_address(i))
-from urllib.parse import urlparse
 
 
 def abnormal_url(url):
     hostname = urlparse(url).hostname  # Extracts the hostname from the URL
-    print(hostname)
     if hostname:
         hostname = re.escape(
             hostname
@@ -56,16 +52,15 @@ def abnormal_url(url):
 
 
 df["abnormal_url"] = df["url"].apply(lambda i: abnormal_url(i))
-print(df["abnormal_url"])
 
 
-def google_index(url):
-    site = search(url, 5)
-    return 1 if site else 0
+# def google_index(url):
+#     site = search(url, 5)
+#     return 1 if site else 0
 
 
-df["google_index"] = df["url"].apply(lambda i: google_index(i))
-print(df["google_index"])
+# df["google_index"] = df["url"].apply(lambda i: google_index(i))
+# print(df["google_index"])
 
 
 def count_dot(url):
@@ -75,8 +70,6 @@ def count_dot(url):
 
 df["count."] = df["url"].apply(lambda i: count_dot(i))
 
-print(df["count."])
-
 
 def count_www(url):
     url.count("www")
@@ -84,7 +77,6 @@ def count_www(url):
 
 
 df["count-www"] = df["url"].apply(lambda i: count_www(i))
-print(df["count-www"])
 
 
 def count_atrate(url):
@@ -92,7 +84,6 @@ def count_atrate(url):
 
 
 df["count@"] = df["url"].apply(lambda i: count_atrate(i))
-print(df["count@"])
 
 
 def no_of_dir(url):
@@ -101,7 +92,6 @@ def no_of_dir(url):
 
 
 df["count_dir"] = df["url"].apply(lambda i: no_of_dir(i))
-print(df["count_dir"])
 
 
 def no_of_embed(url):
@@ -110,7 +100,6 @@ def no_of_embed(url):
 
 
 df["count_embed_domian"] = df["url"].apply(lambda i: no_of_embed(i))
-print(df["count_embed_domian"])
 
 
 def shortening_service(url):
@@ -132,7 +121,6 @@ def shortening_service(url):
 
 
 df["short_url"] = df["url"].apply(lambda i: shortening_service(i))
-print(df["short_url"])
 
 
 def count_https(url):
@@ -140,7 +128,6 @@ def count_https(url):
 
 
 df["count-https"] = df["url"].apply(lambda i: count_https(i))
-print(df["count-https"])
 
 
 def count_http(url):
@@ -148,7 +135,6 @@ def count_http(url):
 
 
 df["count-http"] = df["url"].apply(lambda i: count_http(i))
-print(df["count-http"])
 
 
 def count_per(url):
@@ -192,7 +178,6 @@ def hostname_length(url):
 
 df["hostname_length"] = df["url"].apply(lambda i: hostname_length(i))
 df.head()
-print(df["hostname_length"])
 
 
 def suspicious_words(url):
@@ -259,7 +244,7 @@ lb_make = LabelEncoder()
 df["type_code"] = lb_make.fit_transform(df["type"])
 
 # Predictor Variables
-# filtering out google_index as it has only 1 value
+
 X = df[
     [
         "use_of_ip",
