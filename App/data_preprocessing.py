@@ -1,105 +1,24 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import string
 from sklearn.preprocessing import LabelEncoder
-from urllib.parse import urlparse
-from tld import get_tld
 import numpy as np
 import re
-from urllib.parse import urlparse
 from tld import get_tld
-import os.path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from googlesearch import search
-
+import tldextract
 
 # Load the dataset
-df = pd.read_csv("MaliciousURL.csv", nrows=1000)
+df = pd.read_csv("MaliciousURL.csv", nrows= 10000)
 
 
-# ... Feature engineering code ...
-def having_ip_address(url):
-    match = re.search(
-        "(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
-        "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\/)|"  # IPv4
-        "((0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\/)"  # IPv4 in hexadecimal
-        "(?:[a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}",
-        url,
-    )  # Ipv6
-    if match:
-        # print match.group()
-        return 1
-    else:
-        # print 'No matching pattern found'
-        return 0
+# URL
+def url_length(url):
+    return len(str(url))
 
 
-df["use_of_ip"] = df["url"].apply(lambda i: having_ip_address(i))
-
-
-def abnormal_url(url):
-    hostname = urlparse(url).hostname  # Extracts the hostname from the URL
-    if hostname:
-        hostname = re.escape(
-            hostname
-        )  # Escape special characters in hostname if it's not None
-        match = re.search(hostname, url)  # Searches for the escaped hostname in the URL
-        if match:
-            return 1  # Returns 1 if the escaped hostname is found in the URL
-        else:
-            return 0  # Returns 0 if the escaped hostname is not found in the URL
-    else:
-        return 0  # Returns 0 if the hostname is None or couldn't be extracted
-
-
-df["abnormal_url"] = df["url"].apply(lambda i: abnormal_url(i))
-
-
-# def google_index(url):
-#     site = search(url, 5)
-#     return 1 if site else 0
-
-
-# df["google_index"] = df["url"].apply(lambda i: google_index(i))
-# print(df["google_index"])
-
-
-def count_dot(url):
-    count_dot = url.count(".")
-    return count_dot
-
-
-df["count."] = df["url"].apply(lambda i: count_dot(i))
-
-
-def count_www(url):
-    url.count("www")
-    return url.count("www")
-
-
-df["count-www"] = df["url"].apply(lambda i: count_www(i))
-
-
-def count_atrate(url):
-    return url.count("@")
-
-
-df["count@"] = df["url"].apply(lambda i: count_atrate(i))
-
-
-def no_of_dir(url):
-    urldir = urlparse(url).path
-    return urldir.count("/")
-
-
-df["count_dir"] = df["url"].apply(lambda i: no_of_dir(i))
-
-
-def no_of_embed(url):
-    urldir = urlparse(url).path
-    return urldir.count("//")
-
-
-df["count_embed_domian"] = df["url"].apply(lambda i: no_of_embed(i))
+df["url_length"] = df["url"].apply(lambda i: url_length(i))
 
 
 def shortening_service(url):
@@ -123,18 +42,18 @@ def shortening_service(url):
 df["short_url"] = df["url"].apply(lambda i: shortening_service(i))
 
 
-def count_https(url):
-    return url.count("https")
+def suspicious_words(url):
+    match = re.search(
+        "PayPal|login|signin|bank|account|update|free|lucky|service|bonus|ebayisapi|webscr",
+        url,
+    )
+    if match:
+        return 1
+    else:
+        return 0
 
 
-df["count-https"] = df["url"].apply(lambda i: count_https(i))
-
-
-def count_http(url):
-    return url.count("http")
-
-
-df["count-http"] = df["url"].apply(lambda i: count_http(i))
+df["sus_url"] = df["url"].apply(lambda i: suspicious_words(i))
 
 
 def count_per(url):
@@ -151,47 +70,11 @@ def count_ques(url):
 df["count?"] = df["url"].apply(lambda i: count_ques(i))
 
 
-def count_hyphen(url):
-    return url.count("-")
-
-
-df["count-"] = df["url"].apply(lambda i: count_hyphen(i))
-
-
 def count_equal(url):
     return url.count("=")
 
 
 df["count="] = df["url"].apply(lambda i: count_equal(i))
-
-
-def url_length(url):
-    return len(str(url))
-
-
-df["url_length"] = df["url"].apply(lambda i: url_length(i))
-
-
-def hostname_length(url):
-    return len(urlparse(url).netloc)
-
-
-df["hostname_length"] = df["url"].apply(lambda i: hostname_length(i))
-df.head()
-
-
-def suspicious_words(url):
-    match = re.search(
-        "PayPal|login|signin|bank|account|update|free|lucky|service|bonus|ebayisapi|webscr",
-        url,
-    )
-    if match:
-        return 1
-    else:
-        return 0
-
-
-df["sus_url"] = df["url"].apply(lambda i: suspicious_words(i))
 
 
 def digit_count(url):
@@ -202,7 +85,7 @@ def digit_count(url):
     return digits
 
 
-df["count-digits"] = df["url"].apply(lambda i: digit_count(i))
+df["number-digits"] = df["url"].apply(lambda i: digit_count(i))
 
 
 def letter_count(url):
@@ -213,65 +96,348 @@ def letter_count(url):
     return letters
 
 
-df["count-letters"] = df["url"].apply(lambda i: letter_count(i))
+df["number-letters"] = df["url"].apply(lambda i: letter_count(i))
+
+
+# Top level domain--------------------------------------------------------------
+def presence_in_suspicious_list(url):
+    suspicious_tlds = [
+        "zip",
+        "review",
+        "country",
+        "kim",
+        "cricket",
+        "science",
+        "work",
+        "party",
+        "gq",
+        "Link",
+    ]
+
+    extracted = tldextract.extract(url)
+    extracted_tld = extracted.suffix
+
+    # Checking if the extracted TLD is suspicious
+    if extracted_tld in suspicious_tlds:
+        return 1
+    else:
+        return 0
+
+
+df["suspicious_tdl"] = df["url"].apply(lambda i: presence_in_suspicious_list(i))
+
+
+# Primary domain-----------------------------------------------------------------------------------------------------------------------
+def having_ip_address(url):
+    match = re.search(
+        "(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
+        "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\/)|"  # IPv4
+        "((0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\.(0x[0-9a-fA-F]{1,2})\\/)"  # IPv4 in hexadecimal
+        "(?:[a-fA-F0-9]{1,4}:){7}[a-fA-F0-9]{1,4}",
+        url,
+    )  # Ipv6
+    if match:
+        return 1
+    else:
+        return 0
+
+
+df["use_of_ip"] = df["url"].apply(lambda i: having_ip_address(i))
+
+
+def len_primary_domain(url):
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.scheme == "http" or parsed_url.scheme == "https":
+            primary_domain = parsed_url.netloc
+            if "www." in primary_domain:
+                primary_domain = primary_domain.replace("www.", "")
+
+            return len(primary_domain)
+        else:
+            return 0
+    except ValueError:
+        return 0
+
+
+df["len_primary_domain"] = df["url"].apply(lambda i: len_primary_domain(i))
+
+
+def count_dot_primary_domain(url):
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.scheme == "http" or parsed_url.scheme == "https":
+            primary_domain = parsed_url.netloc
+            if "www." in primary_domain:
+                primary_domain = primary_domain.replace("www.", "")
+
+            return primary_domain.count(".")
+        else:
+            return 0
+    except ValueError:
+        return 0
+
+
+df["count_dot_primary_domain"] = df["url"].apply(lambda i: count_dot_primary_domain(i))
+
+
+def count_hyphen_primary_domain(url):
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.scheme == "http" or parsed_url.scheme == "https":
+            primary_domain = parsed_url.netloc
+            if "www." in primary_domain:
+                primary_domain = primary_domain.replace("www.", "")
+
+            return primary_domain.count("-")
+        else:
+            return 0
+    except ValueError:
+        return 0
+
+
+df["count_hyphen_primary_domain"] = df["url"].apply(
+    lambda i: count_hyphen_primary_domain(i)
+)
+
+
+def count_at_primary_domain(url):
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.scheme == "http" or parsed_url.scheme == "https":
+            primary_domain = parsed_url.netloc
+            if "www." in primary_domain:
+                primary_domain = primary_domain.replace("www.", "")
+
+            return primary_domain.count("@")
+        else:
+            return 0
+    except ValueError:
+        return 0
+
+
+df["count_at_primary_domain"] = df["url"].apply(lambda i: count_at_primary_domain(i))
+
+
+# Sub domain -----------------------------------------------------------------------------
+def count_www(url):
+    return url.count("www")
+
+
+df["count-www"] = df["url"].apply(lambda i: count_www(i))
+
+
+# Giao thức kết nối Scheme -------------------------------------------------------
+def count_https(url):
+    return url.count("https")
+
+
+df["count-https"] = df["url"].apply(lambda i: count_https(i))
+
+
+def count_http(url):
+    return url.count("http")
+
+
+df["count-http"] = df["url"].apply(lambda i: count_http(i))
+
+
+# Path-------------------------------------------------------------------------------------------------
+def count_doublez_forward_slash(url):
+    return url.count("//")
+
+
+df["count_double_forward_slash"] = df["url"].apply(
+    lambda i: count_doublez_forward_slash(i)
+)
+
+
+def no_of_dir(url):
+    try:
+        urldir = urlparse(url).path
+        return urldir.count("/")
+    except ValueError:
+        return 0
+
+
+df["count_dir"] = df["url"].apply(lambda i: no_of_dir(i))
 
 
 def fd_length(url):
-    urlpath = urlparse(url).path
     try:
+        urlpath = urlparse(url).path
         return len(urlpath.split("/")[1])
-    except:
+    except (ValueError, IndexError):
         return 0
 
 
 df["fd_length"] = df["url"].apply(lambda i: fd_length(i))
 
-df["tld"] = df["url"].apply(lambda i: get_tld(i, fail_silently=True))
 
-
-def tld_length(tld):
+def has_uppercase_directory(url):
     try:
-        return len(tld)
+        url_path = urlparse(url).path
+        path_components = url_path.split("/")
+
+        for component in path_components[1:]:
+            if component.isupper():
+                return 0
+        return 1
     except:
-        return -1
+        return 0
 
 
-df["tld_length"] = df["tld"].apply(lambda i: tld_length(i))
+df["has_uppercase_directory"] = df["url"].apply(lambda i: has_uppercase_directory(i))
 
+
+def count_subdirectories(url):
+    try:
+        parsed_url = urlparse(url)
+        path_components = parsed_url.path.split("/")
+        subdirectories_count = len(
+            [directory for directory in path_components[1:] if directory]
+        )
+        return subdirectories_count
+    except ValueError:
+        return 0
+
+
+df["count_subdirectories"] = df["url"].apply(lambda i: count_subdirectories(i))
+
+
+def count_special_characters(url):
+    try:
+        parsed_url = urlparse(url)
+        path = parsed_url.path
+        alphanumeric_chars = set(string.ascii_letters + string.digits)
+        special_char_count = sum(
+            1 for char in path if char not in alphanumeric_chars and char != "/"
+        )
+        return special_char_count
+    except ValueError:
+        return 0
+
+
+df["count_special_characters"] = df["url"].apply(lambda i: count_special_characters(i))
+
+
+def count_zeroes(url):
+    try:
+        parsed_url = urlparse(url)
+        path = parsed_url.path
+        zero_count = sum(1 for char in path if char == "0")
+        return zero_count
+    except ValueError:
+        return 0
+
+
+df["count_zeroes"] = df["url"].apply(lambda i: count_zeroes(i))
+
+
+def calculate_upper_lower_ratio(url):
+    try:
+        parsed_url = urlparse(url)
+        path = parsed_url.path
+        uppercase_count = sum(1 for char in path if char.isupper())
+        lowercase_count = sum(1 for char in path if char.islower())
+        if lowercase_count > 0:  # To avoid division by zero
+            ratio = uppercase_count / lowercase_count
+        else:
+            ratio = 0
+
+        return ratio
+    except ValueError:
+        return 0
+
+
+df["calculate_upper_lower_ratio"] = df["url"].apply(
+    lambda i: calculate_upper_lower_ratio(i)
+)
+
+
+# Function to count length of parameters in query string
+def count_parameters_length(url):
+    try:
+        parsed_url = urlparse(url)
+        query_string = parsed_url.query
+        params_length = len(query_string)
+        return params_length
+    except ValueError:
+        return 0
+
+
+df["count_parameters_length"] = df["url"].apply(lambda i: count_parameters_length(i))
+
+
+def count_query_parameters(url):
+    try:
+        parsed_url = urlparse(url)
+        query_string = parsed_url.query
+        parameters = parse_qs(query_string)
+
+        num_queries = len(parameters)
+        return num_queries
+    except ValueError:
+        return 0
+
+
+df["count_query_parameters"] = df["url"].apply(lambda i: count_query_parameters(i))
+
+
+def has_anchor(url):
+    try:
+        parsed_url = urlparse(url)
+        if parsed_url.fragment:
+            return 1
+        else:
+            return 0
+    except ValueError:
+        return 0
+
+
+df["has_anchor"] = df["url"].apply(lambda i: has_anchor(i))
 
 # Label encoding
 lb_make = LabelEncoder()
 df["type_code"] = lb_make.fit_transform(df["type"])
 
 # Predictor Variables
-
 X = df[
     [
-        "use_of_ip",
-        "count.",
-        "abnormal_url",
-        "count-www",
-        "count@",
-        "count_dir",
-        "count_embed_domian",
+        "url_length",
         "short_url",
-        "count-https",
-        "count-http",
+        "sus_url",
+        "count_dir",
         "count%",
         "count?",
-        "count-",
         "count=",
-        "url_length",
-        "hostname_length",
-        "sus_url",
+        "number-digits",
+        "number-letters",
+        "suspicious_tdl",
+        "use_of_ip",
+        "len_primary_domain",
+        "count_dot_primary_domain",
+        "count_hyphen_primary_domain",
+        "count_at_primary_domain",
+        "count-www",
+        "count-https",
+        "count-http",
+        "count_double_forward_slash",
         "fd_length",
-        "tld_length",
-        "count-digits",
-        "count-letters",
+        "has_uppercase_directory",
+        "count_subdirectories",
+        "count_special_characters",
+        "count_zeroes",
+        "calculate_upper_lower_ratio",
+        "count_parameters_length",
+        "count_query_parameters",
+        "has_anchor",
     ]
 ]
+
 # Target Variable
 y = df["type_code"]
+
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(

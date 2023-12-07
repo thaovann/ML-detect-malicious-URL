@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>URL Classifier</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
-</head>
-<body>
-    <div class="container" style="text-align: center; margin-top: 20vh; background">
-        <h2>Welcome Back</h2>
-        <h4>Input url</h4>
-        <form action="/" method="post">
-            <input type="text" name="url" placeholder="Input URL you want to check" style="padding: 10px; margin-top: 10px; width: 80%; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
-            <br><br>
-            <input class="btn btn-primary mt-3" type="submit" value="Predict URL" style="padding: 10px 20px; border: none; border-radius: 5px; background-color: #007bff; color: #fff; cursor: pointer;">
-        </form>
-        {% if prediction %}
-        <p>URL is a {{ prediction }}</p>
-        {% endif %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+  </head>
+  <body>
+    <div
+      class="container"
+      style="text-align: center; margin-top: 20vh; background"
+    >
+      <h2>Welcome to my website</h2>
+      <h4>Input url</h4>
+      <form action="/" method="post">
+        <input
+          type="text"
+          name="url"
+          value="{{ submitted_url }}"
+          placeholder="Input URL you want to check"
+          style="
+            padding: 10px;
+            margin-top: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+          "
+        />
+        <br /><br />
+        <input
+          class="btn btn-primary mt-3"
+          type="submit"
+          value="Submit"
+          style="
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+          "
+        />
+      </form>
+      {% if prediction %}
+      <p>{{ submitted_url }} is a {{ prediction }} URL</p>
+      {% endif %}
     </div>
-</body>
+  </body>
 </html>
