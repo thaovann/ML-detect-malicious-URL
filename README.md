@@ -348,7 +348,7 @@ Bước đầu tiên trong việc xây dựng mô hình phân loại là trích 
 ![Logo](images/Url_components.png)
 
 <a name="kết-quả-thực-nghiệm"> </a>
-### 3.2. Kết quả thực nghiệm
+## 3.2. Kết quả thực nghiệm
 
 <a name="đánh-giá-các-mô-hình"> </a>
 #### 3.2.1. Đánh giá các mô hình
