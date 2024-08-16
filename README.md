@@ -25,11 +25,9 @@
 3.3. [Kết quả thực nghiệm](#kết-quả-thực-nghiệm)  
    - 3.3.1. [Đánh giá các mô hình](#đánh-giá-các-mô-hình)  
    - 3.3.2. [Xây dựng giao diện mô hình phát hiện URL độc hại](#xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại)  
-
-# KẾT LUẬN
 # TÀI LIỆU THAM KHẢO
 
-<a name="br3"></a> 
+<a name=""></a> 
 
 **LỜI MỞ ĐẦU**
 
@@ -38,12 +36,11 @@ Hiện nay, Học máy (Machine learning) là một trong những lĩnh vực c�
 Sau một thời gian tìm hiểu và thực hiện đề tài này, em đã xây dựng được một chương trình học máy giúp phát hiện và phân loại các URL theo các nhãn BENIGN, PHISING, DEPACEMENT, MALWARE sử dụng mô hình Random Forest.
 
 **CHƯƠNG 1. GIỚI THIỆU ĐỀ TÀI**
-
+<a name="url-là-gì"></a> 
 ## 1.1. URL là gì ?
 
 URL viết tắt của Uniform Resource Locator, đơn giản là một địa chỉ dẫn tới một tài nguyên cụ thể và duy nhất trên Web. URL gồm nhiều phần khác nhau, có phần là bắt buộc, có phần là không bắt buộc có (chi tiết ở hình)
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240123162739/url-parts-copy-(1).webp "Optional title")
-
 
 ***1-0-1: URL** (nguồn: develop.mozilla.org)*
 
@@ -130,7 +127,8 @@ quảng cáo tiếp thị.
 
 Ví dụ: trong URL https://viccisw.com/page#section, phần #section là điểm neo. Khi URL này được truy cập, trình duyệt web thường sẽ cuộn xuống phần trang web được xác định bởi anchor, miễn là trang web đó có một phần tử có thuộc tính ID hoặc tên tương ứng với giá trị của anchor. Anchor thường được sử dụng để hướng người dùng đến một phần cụ thể của trang web, đặc biệt là trong các tài liệu hoặc bài viết dài hơn, bằng cách liên kết trực tiếp đến một phần cụ thể trong trang.
 
-[**1.2. Một số kĩ thuật tấn công bằng URLs ?**] (#một-số-kỹ-thuật-tấn-công-bằng-urls)  
+<a name="một-số-kỹ-thuật-tấn-công-bằng-urls"></a>
+## 1.2. Một số kĩ thuật tấn công bằng URLs ?**]
 
 Kĩ thuật tấn công là những phương thức hoặc cơ chế được sử dụng bởi kẻ tấn công để có truy cập trái phép vào dữ liệu của người dùng hoặc gây ra tổn hại đến hệ thống bị tấn công. Kẻ tấn công có thể sử dụng URLs độc hại để triển khai việc tấn công trên. URLs độc hại có thể được phân loại thành spam, phishing, malware hoặc defacement URLs. Phần lớn các cuộc tấn công mạng xảy ra khi người dùng nhấp vào các URL độc hại. Khi URL bị khai thác cho các mục đích khác ngoài việc truy cập các tài nguyên hợp pháp trên Internet, chúng sẽ gây ra mối đe dọa đối với tính toàn vẹn, bảo mật và tính khả dụng của dữ liệu [1]. Trong đề tài này thực hiện phân loại các URL thành bengin, phishing, malware, defacement. Sau đây là chi tiết về các loại URL này
 
