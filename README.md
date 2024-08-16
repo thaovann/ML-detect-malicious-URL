@@ -22,9 +22,9 @@
 3.1. [Huấn luyện mô hình](#huấn-luyện-mô-hình)  
    - 3.1.1. [Cơ sở dữ liệu nguồn](#cơ-sở-dữ-liệu-nguồn)  
    - 3.1.2. [Xử lý đầu vào](#xử-lý-đầu-vào)  
-3.3. [Kết quả thực nghiệm](#kết-quả-thực-nghiệm)  
-   - 3.3.1. [Đánh giá các mô hình](#đánh-giá-các-mô-hình)  
-   - 3.3.2. [Xây dựng giao diện mô hình phát hiện URL độc hại](#xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại)  
+3.2. [Kết quả thực nghiệm](#kết-quả-thực-nghiệm)  
+   - 3.2.1. [Đánh giá các mô hình](#đánh-giá-các-mô-hình)  
+   - 3.2.2. [Xây dựng giao diện mô hình phát hiện URL độc hại](#xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại)  
 # TÀI LIỆU THAM KHẢO
 
 <a name=""></a> 
@@ -346,10 +346,10 @@ Bước đầu tiên trong việc xây dựng mô hình phân loại là trích 
 ![Logo](images/Url_components.png)
 
 <a name="kết-quả-thực-nghiệm"> </a>
-### 3.3. Kết quả thực nghiệm
+### 3.2. Kết quả thực nghiệm
 
 <a name="đánh-giá-các-mô-hình"> </a>
-#### 3.3.1. Đánh giá các mô hình
+#### 3.2.1. Đánh giá các mô hình
 
 **Đối với mô hình Random Forest:**
 
@@ -371,7 +371,7 @@ Accuracy : 0.9637
 
 
 <a name="xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại"></a>
-#### 3.3.2. Xây dựng giao diện mô hình phát hiện URL độc hại
+#### 3.2.2. Xây dựng giao diện mô hình phát hiện URL độc hại
 
 **Thuật toán học: Random forest**
 
