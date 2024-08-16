@@ -366,9 +366,11 @@ Accuracy : 0.9671
 **Đối với mô hình XGBoost:**
 
 Accuracy : 0.9637
+
 ![Logo](images/XGBOOST.png)
 
-<a name="xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại></a>
+
+<a name="xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại"></a>
 #### 3.3.2. Xây dựng giao diện mô hình phát hiện URL độc hại
 
 **Thuật toán học: Random forest**
@@ -391,10 +393,10 @@ Flask là một framework web siêu nhẹ dành cho ngôn ngữ lập trình Pyt
 **Cách hoạt động :**
 
 B1 : Nhập một URL vào form
-![Logo](images/web1.jpg)
+![Logo](images/web2.jpg)
 
 B2 : Click vào nút Submit để chương trình đưa ra dự đoán
-![Logo](images/web2.jpg)
+![Logo](images/web3.jpg)
 
 **TÀI LIỆU THAM KHẢO**
 
