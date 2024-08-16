@@ -325,10 +325,10 @@ Tính toán số liệu riêng cho mỗi lớp, sau đó lấy trung bình có t
 **Mô tả dữ liệu**: Dữ liệu gồm 2 trường url và type, tổng có 651191 mẫu đã được gắn nhãn là bengin, malware, defacement và phishing với phân phối như hình bên
 
 ***3-1: Dataset***
-![Logo](images/Picture2.png)
+![Logo](images/Picture2.jpg)
 
 ***3-2: Trực quan hóa dữ liệu***
-![Logo](images/Picture3.png)
+![Logo](images/Picture3.jpg)
 **3.1.2. Xử lí đầu vào**
 
 Bước đầu tiên trong việc xây dựng mô hình phân loại là trích xuất các đặc trưng cho mô hình. Thuật toán học máy chỉ có thể hoạt động với đầu vào số. Do đó, các chuỗi URL cần được mã hóa thành các vectơ số có ý nghĩa. Ta sẽ trích xuất các feature từ URL từ data từ đó giúp mô hình có thể dựa vào đó để được huấn luyện. Trong đề tài này, URL sẽ có tổng cộng 28 feature được liệt kê sau đây:
