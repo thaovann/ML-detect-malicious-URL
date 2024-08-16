@@ -30,60 +30,19 @@
 # KẾT LUẬN
 # TÀI LIỆU THAM KHẢO
 
-
-2
-
-![ref1]
-
 <a name="br3"></a> 
-
-Ứng dụng học máy trong phát hiện URL độc hại – Lê Thị Thảo Vân – 20215664
 
 **LỜI MỞ ĐẦU**
 
-Hiện nay, Học máy (Machine learning) là một trong những lĩnh vực của trí tuệ nhân
+Hiện nay, Học máy (Machine learning) là một trong những lĩnh vực của trí tuệ nhân tạo (AI) được ứng dụng rất nhiều trong rất nhiều mặt của đời sống. Một trong số đó phải kể đến lĩnh vực an toàn thông tin như: Quản lí lỗ hổng bảo mật, Phân tích tệp tĩnh, Phân tích hành vi,… Vì vậy với môn học này, em đã thực hiện đề tài “Ứng dụng học máy trong phát hiện URL độc hại” nhằm mục đích hiểu được cách một chương trình học máy được xây dựng và hoạt động đồng thời ứng dụng chúng trong một vấn đề cụ thể trong lĩnh vực an toàn thông tin.
 
-tạo (AI) được ứng dụng rất nhiều trong rất nhiều mặt của đời sống. Một trong số đó phải
-
-kể đến lĩnh vực an toàn thông tin như: Quản lí lỗ hổng bảo mật, Phân tích tệp tĩnh, Phân
-
-tích hành vi,… Vì vậy với môn học này, em đã thực hiện đề tài “Ứng dụng học máy
-
-trong phát hiện URL độc hại” nhằm mục đích hiểu được cách một chương trình học
-
-máy được xây dựng và hoạt động đồng thời ứng dụng chúng trong một vấn đề cụ thể
-
-trong lĩnh vực an toàn thông tin.
-
-Sau một thời gian tìm hiểu và thực hiện đề tài này, em đã xây dựng được một
-
-chương trình học máy giúp phát hiện và phân loại các URL theo các nhãn BENIGN,
-
-PHISING, DEPACEMENT, MALWARE sử dụng mô hình Random Forest.
-
-Em xin chân thành cảm ơn thầy Bùi Trọng Tùng – Giảng viên hướng dẫn môn
-
-“ProjectI” đã có những gợi ý và nhận xét hữu ích đề em có thể hoàn thành đề tài này
-
-3
-
-![ref1]
-
-<a name="br4"></a> 
-
-Ứng dụng học máy trong phát hiện URL độc hại – Lê Thị Thảo Vân – 20215664
+Sau một thời gian tìm hiểu và thực hiện đề tài này, em đã xây dựng được một chương trình học máy giúp phát hiện và phân loại các URL theo các nhãn BENIGN, PHISING, DEPACEMENT, MALWARE sử dụng mô hình Random Forest.
 
 **CHƯƠNG 1. GIỚI THIỆU ĐỀ TÀI**
 
 **1.1. URL là gì ?**
 
-URL viết tắt của Uniform Resource Locator, đơn giản là một địa chỉ dẫn tới một tài
-
-nguyên cụ thể và duy nhất trên Web.
-
-URL gồm nhiều phần khác nhau, có phần là bắt buộc, có phần là không bắt buộc
-
-có (chi tiết ở hình)
+URL viết tắt của Uniform Resource Locator, đơn giản là một địa chỉ dẫn tới một tài nguyên cụ thể và duy nhất trên Web. URL gồm nhiều phần khác nhau, có phần là bắt buộc, có phần là không bắt buộc có (chi tiết ở hình)
 
 ***1-0-1: URL** (nguồn: develop.mozilla.org)*
 
