@@ -4,6 +4,7 @@
 **MỤC LỤC**
 # CHƯƠNG 1. GIỚI THIỆU ĐỀ TÀI
 1.1. [URL là gì?](#url-là-gì)  
+
 1.2. [Một số kỹ thuật tấn công bằng URLs](#một-số-kỹ-thuật-tấn-công-bằng-urls)  
 
 # CHƯƠNG 2. MACHINE LEARNING VÀ MỘT SỐ THUẬT TOÁN TRONG MACHINE LEARNING
@@ -23,7 +24,8 @@
 # CHƯƠNG 3. THỰC HIỆN ĐỀ TÀI
 3.1. [Huấn luyện mô hình](#huấn-luyện-mô-hình)  
    - 3.1.1. [Cơ sở dữ liệu nguồn](#cơ-sở-dữ-liệu-nguồn)  
-   - 3.1.2. [Xử lý đầu vào](#xử-lý-đầu-vào)  
+   - 3.1.2. [Xử lý đầu vào](#xử-lý-đầu-vào)
+
 3.2. [Kết quả thực nghiệm](#kết-quả-thực-nghiệm)  
    - 3.2.1. [Đánh giá các mô hình](#đánh-giá-các-mô-hình)  
    - 3.2.2. [Xây dựng giao diện mô hình phát hiện URL độc hại](#xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại)  
