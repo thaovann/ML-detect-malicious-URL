@@ -357,13 +357,13 @@ Accuracy : 0.9734
 
 ![Logo](images/RandomForest.png)
 
-**Đối với mô hình Boost:**
+**Đối với mô hình XGBoost:**
 
 Accuracy : 0.9671
 
 ![Logo](images/BOOST.png)
 
-**Đối với mô hình XGBoost:**
+**Đối với mô hình LightBoost:**
 
 Accuracy : 0.9637
 
@@ -388,14 +388,17 @@ Flask là một framework web siêu nhẹ dành cho ngôn ngữ lập trình Pyt
 3\. **Tối giản:** Flask được thiết kế theo nguyên tắc giữ cho mọi thứ đơn giản. Nó cung cấp chỉ những công cụ và tính năng cần thiết để xây dựng ứng dụng web, nhưng vẫn có thể mở rộng thông qua các extension.
 
 **Giao diện của website đưa ra dự đoán về một URL :**
+
 ![Logo](images/web.jpg)
 
 **Cách hoạt động :**
 
 B1 : Nhập một URL vào form
+
 ![Logo](images/web2.jpg)
 
 B2 : Click vào nút Submit để chương trình đưa ra dự đoán
+
 ![Logo](images/web3.jpg)
 
 **TÀI LIỆU THAM KHẢO**
