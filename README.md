@@ -202,6 +202,7 @@ Trước khi nói đến các thuật toán học trong Học máy, ta sẽ đ�
 **Học kết hợp (Emsemble learning)**
 
 Là một kĩ thuật học có giám sát kết hợp nhiều mô hình để đưa ra một mô hình hiệu quả và mạnh mẽ hơn từ đó làm giảm khả năng xảy ra overfiting với các dữ liệu huấn luyện.
+
 ![Alt text](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/df/de/Decision-Tree.png)
 
 **Cây quyết định (Decision tree)**
@@ -215,12 +216,15 @@ Cây quyết định là một cấu trúc cây giống như sơ đồ trong đ�
 Là một kĩ thuật trong emsemble learning mà rất nhiều các mô hình cơ sở được huấn luyện độc lập và song song trên các tập con của tập dữ liệu huấn luyện. Mỗi tập con dữ liệu được tạo ra bằng việc sử dụng bootstrap sampling, mỗi quan sát hay mỗi mẫu được chọn một cách ngẫu nhiên có thể thay thế, tức là một mẫu có thể xuất hiện lặp lại trong nhiều tập dữ liệu huấn luyện con. Dự đoán cuối cùng được tổng hợp từ tất cả các dự đoán của các mô hình cơ sở.
 
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20210707140912/Bagging.png)
+
 ***2-3: Bagging Classifier** (Nguồn: https://www.geeksforgeeks.org/xgboost/)*
 
 **Boosting**
 
 Là một kĩ thuật, mô hình kết hợp nhằm xây dựng một bộ phân loại mạnh từ những bộ phân loại kém. Mô hình được xây dựng theo một chuỗi các mô hình kém hơn, đầu tiên một mô hình được xây dựng từ dữ liệu huấn luyện, sau đó mô hình thứ hai được xây dựng sau đó nhằm cố gằng sửa đổi những lỗi sai từ mô hình đầu tiên, liên tục như vậy cho đến khi dữ liệu huấn luyện được dự đoán đúng hoặc số các mô hình được đưa vào đã đạt đến giá trị max.
+
 ![image](https://github.com/user-attachments/assets/a1f5d994-e4ea-4c49-94bf-4d5b3c0f9d27)
+
 ***2-4: Boosting** (Nguồn: https://www.geeksforgeeks.org/xgboost/)*
 **Gradient Boosting**
 
@@ -252,6 +256,7 @@ Exclusive Feature Bundling (EFB)
 Các kỹ thuật này đáp ứng các hạn chế của thuật toán dựa trên biểu đồ được sử dụng chủ yếu trong tất cả các khung GBDT (Gradient Boosting Decision Tree). LightGBM phân chia cây theo lá, trái ngược với các thuật toán boosting khác phát triển theo cấp độ cây. Nó chọn lá có độ mất delta tối đa để phát triển. Vì lá được cố định nên thuật toán theo lá có tổn thất thấp hơn so với thuật toán theo cấp độ. Sự phát triển của cây theo lá có thể làm tăng độ phức tạp của mô hình và có thể dẫn đến việc trang bị quá mức trong các tập dữ liệu nhỏ.
 
 *2-4: Cấu trúc của LightBGM*
+
 ![Logo](images/Picture1.png)
 
 *(Nguồn: https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/*
@@ -270,12 +275,14 @@ Các kỹ thuật này đáp ứng các hạn chế của thuật toán dựa tr
 #### 2.3.1.Recall:
 
 Recall đo lường tỷ lệ của các trường hợp dự đoán true positive so với tổng số trường hợp thực sự thuộc vào positive class. Recall rất hữu ích khi xử lý các tập dữ liệu mất cân bằng trong đó một class (positive hoặc negative) chiếm ưu thế hơn class kia vì nó tập trung vào khả năng của mô hình trong việc tìm kiếm các đối tượng của class mục tiêu.
+
 <a name ="precision"> </a>
 #### 2.3.2. Precision
 
 Precision là thước đo tần suất mô hình học máy dự đoán chính xác positive class. Bạn có thể tính toán độ chính xác bằng cách chia số lượng dự đoán TruePositive cho tổng số trường hợp mà mô hình dự đoán là positive. Và khi đó 0< Precision <=1, Precision càng lớn có nghĩa là độ chính xác của các điểm tìm được càng cao.
 
 ![Alt text](https://cdn.prod.website-files.com/5d7b77b063a9066d83e1209c/639c3cc56bda8713d4a2f29c_precision-recall.webp)
+
 <a name ="f-1-score"> </a>
 #### 2.3.3. F-1 Score
 
@@ -322,37 +329,45 @@ Tính toán số liệu riêng cho mỗi lớp, sau đó lấy trung bình có t
 **Nguồn dữ liệu**: dựa vào bộ dữ liệu của tác giả MANU SIDDHARTHA đăng trên trang web <https://www.kaggle.com/>[ ](https://www.kaggle.com/)nhưng có chỉnh sửa lại các URL sao cho đầy đủ giao thức kết nối (HTTP, HTTPS,…) để có thể phù hợp với bài toán
 
 **Mô tả dữ liệu**: Dữ liệu gồm 2 trường url và type, tổng có 651191 mẫu đã được gắn nhãn là bengin, malware, defacement và phishing với phân phối như hình bên
+
 ![Logo](images/Picture2.jpg)
 
 ***3-1: Dataset***
 
 ![Logo](images/Picture3.jpg)
+
 ***3-2: Trực quan hóa dữ liệu***
+
 <a name="xử-lý-đầu-vào"> </a>
 #### 3.1.2. Xử lí đầu vào
 
 Bước đầu tiên trong việc xây dựng mô hình phân loại là trích xuất các đặc trưng cho mô hình. Thuật toán học máy chỉ có thể hoạt động với đầu vào số. Do đó, các chuỗi URL cần được mã hóa thành các vectơ số có ý nghĩa. Ta sẽ trích xuất các feature từ URL từ data từ đó giúp mô hình có thể dựa vào đó để được huấn luyện. Trong đề tài này, URL sẽ có tổng cộng 28 feature được liệt kê sau đây:
+
 ![Logo](images/Url_components.png)
 
 <a name="kết-quả-thực-nghiệm"> </a>
 ### 3.3. Kết quả thực nghiệm
+
 <a name="đánh-giá-các-mô-hình"> </a>
 #### 3.3.1. Đánh giá các mô hình
 
 **Đối với mô hình Random Forest:**
 
 Accuracy : 0.9734
+
 ![Logo](images/RandomForest.png)
 
 **Đối với mô hình Boost:**
 
 Accuracy : 0.9671
+
 ![Logo](images/BOOST.png)
 
 **Đối với mô hình XGBoost:**
 
 Accuracy : 0.9637
 ![Logo](images/XGBOOST.png)
+
 <a name="xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại></a>
 #### 3.3.2. Xây dựng giao diện mô hình phát hiện URL độc hại
 
