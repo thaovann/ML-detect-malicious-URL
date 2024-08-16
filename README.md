@@ -128,7 +128,7 @@ quảng cáo tiếp thị.
 Ví dụ: trong URL https://viccisw.com/page#section, phần #section là điểm neo. Khi URL này được truy cập, trình duyệt web thường sẽ cuộn xuống phần trang web được xác định bởi anchor, miễn là trang web đó có một phần tử có thuộc tính ID hoặc tên tương ứng với giá trị của anchor. Anchor thường được sử dụng để hướng người dùng đến một phần cụ thể của trang web, đặc biệt là trong các tài liệu hoặc bài viết dài hơn, bằng cách liên kết trực tiếp đến một phần cụ thể trong trang.
 
 <a name="một-số-kỹ-thuật-tấn-công-bằng-urls"></a>
-## 1.2. Một số kĩ thuật tấn công bằng URLs ?**]
+## 1.2. Một số kĩ thuật tấn công bằng URLs ?
 
 Kĩ thuật tấn công là những phương thức hoặc cơ chế được sử dụng bởi kẻ tấn công để có truy cập trái phép vào dữ liệu của người dùng hoặc gây ra tổn hại đến hệ thống bị tấn công. Kẻ tấn công có thể sử dụng URLs độc hại để triển khai việc tấn công trên. URLs độc hại có thể được phân loại thành spam, phishing, malware hoặc defacement URLs. Phần lớn các cuộc tấn công mạng xảy ra khi người dùng nhấp vào các URL độc hại. Khi URL bị khai thác cho các mục đích khác ngoài việc truy cập các tài nguyên hợp pháp trên Internet, chúng sẽ gây ra mối đe dọa đối với tính toàn vẹn, bảo mật và tính khả dụng của dữ liệu [1]. Trong đề tài này thực hiện phân loại các URL thành bengin, phishing, malware, defacement. Sau đây là chi tiết về các loại URL này
 
@@ -149,8 +149,8 @@ URL này dẫn người dùng tới một trang web độc hại mà điển hì
 Defacement URL chuyển hướng người dùng tới một trang web đã bị tin tặc thay đổi ở một hoặc nhiều khía cạnh như giao diện hay một số nội dung của trang web.[4] Kiểu tấn công này xảy ra khi kẻ tấn công phát hiện ra một lỗ hổng của website và lợi dụng nó nhằm gây hại cho website và sửa đổi nội dung trên trang web mà không có sự cho phép của chủ sở hữu. Về mặt kĩ thuật thì việc này gọi là xâm nhập một trang web.[2]
 
 **CHƯƠNG 2. MACHINE LEARNING VÀ MỘT SỐ THUẬT TOÁN TRONG MACHINE LEARNING**
-
-[**2.1. Giới thiệu về machine learning**](#giới-thiệu-về-machine-learning) 
+<a name="giới-thiệu-về-machine-learning"></a>
+## 2.1. Giới thiệu về machine learning
 
 Machine learning (Học máy) là 1 nhánh con của trí tuệ nhân tạo (AI) và khoa học máy tính. Machine learning sử dụng data, thuật toán đầu vào để tự xử lý các vấn đề và liên tục tối ưu để tạo ra những phương án xử lý mới, hiệu quả hơn; giống như cách thức tự học của não bộ con người.[4]
 Thống kê và dự đoán là 2 mục đích chính của việc áp dụng machine learning vì thế hệ thống này được thiết kế với khả năng tự nghiên cứu, cải tiến bản thân dựa trên những nguyên lý được lập trình ban đầu. Trong nhiều trường hợp machine learning sẽ tự đề xuất ra giải pháp tối ưu mà không cần được lập trình trước.[4]Machine learning sử dụng data, thuật toán đầu vào để tự xử lý các vấn đề và liên tục tối ưu để tạo ra những phương án xử lý mới, hiệu quả hơn; giống như cách thức tự học của não bộ con người.[4]
@@ -160,6 +160,7 @@ Thống kê và dự đoán là 2 mục đích chính của việc áp dụng ma
 **Quá trình “tự học” của Machine Learning**
 
 Về tổng thể thì quá trình này sẽ đi từ xác định vấn đề, rà soát các phương án có sẵn từ bộ dữ liệu đầu vào để trả ra kết quả tương thích. Sau mỗi lần xử lý, machine learning có khả năng đánh giá và đúc kết kinh nghiệm để làm “giàu” thêm bộ dữ liệu được lập trình ban đầu.[4]
+
 ![Alt text](https://lh6.googleusercontent.com/FVypcunht5yvMvrgbJfbMWvSjb4q_x57fI4r66JV6SGQ5YGXxqLx25nRuPzuYyOdK_wXygoB0OnS4EeZ9x0r_Yn1PPchisFOzHH85fSX-ADbgd7F5un19_qPnfARyGw6h7DO5vUojBm0rzpD2vmqF-CY9MqZuf0X0klJbXDV_jYJt4EljSANflwVyCJ6fg)
 
 ***2-1: Quá trình học của Machine Learning***
@@ -193,8 +194,8 @@ Machine Learning vẫn chưa thể tách biệt khỏi con người. Tuy nhiên,
 2\. **Unsupervised learning - Học không giám sát**: Machine learning chỉ được cung cấp các thuật toán, công cụ để tự xử lý mà không biết trước kết quả. Dễ thấy nhất việc ứng dụng của phân loại này đó là cá nhân hóa trải nghiệm khách hàng.Dữ liệu đầu vào bao gồm hành vi, lịch sử mua mua hàng và hệ thống sẽ dự đoán những sản phẩm phù hợp và đề xuất riêng cho từng khách hàng.[4]
 
 3\. **Semi-supervised learning- Học bán giám sát**: Đây là phân loại nằm ở giữa của 2 phân loại trên khi này dữ liệu đầu vào là 1 hỗn hợp bao gồm cả phương pháp lẫn đáp án. Điểm khác biệt ở đây là phương án và đáp án chưa được nhóm lại thành từng bộ. Như vậy machine learning phải tự tìm ra cách giải nào tương thích với đáp án nào trong bộ dữ liệu sẵn có.[4] Semi-supervised learning thường được doanh nghiệp ứng dụng trong khảo sát thị trường. Trước khi ra mắt sản phẩm mới, họ đưa ra các kết quả giả định về phản ứng của người tiêu dùng. Sau đó, họ sử dụng machine learning trong quá trình khảo sát để kiểm chứng xem giả định nào là đúng. Nhờ đó, doanh nghiệp có thể điều chỉnh sản phẩm, nhắm đến đối tượng mục tiêu phù hợp và dễ thành công hơn khi chính thức ra mắt.[4]
-
-**2.2. Một số thuật toán học**
+<a name="một-số-thuật-toán-học-máy"></a>
+#### 2.2. Một số thuật toán học
 
 Trước khi nói đến các thuật toán học trong Học máy, ta sẽ đề cập đến một số các khái niệm liên quan để có thể hiểu rõ hơn :
 
@@ -224,8 +225,8 @@ Là một kĩ thuật, mô hình kết hợp nhằm xây dựng một bộ phân
 **Gradient Boosting**
 
 Gradient Boosting là một thuật toán Boosting phổ biến. Mỗi bộ dự đoán (predictor) sẽ sửa lỗi của bộ dự đoán trước đó.
-
-**2.2.1. Random Forest**
+<a name="random-forest"></a>
+#### 2.2.1. Random Forest
 
 Random forest là một phương pháp học kết hợp trong machine learning cho các bài toán phân loại (classification), hồi quy (regression) và một số bài toán khác. Đưa ra dự đoán dựa vào sự kết hợp từ rất nhiều cây quyết định (decision trees) được xây dựng song song trong quá trình học bằng việc lấy trung bình tất cả các dự đoán.
 
@@ -236,12 +237,12 @@ Random forest là một phương pháp học kết hợp trong machine learning 
 **Đa dạng hóa các cây quyết định:** Các cây quyết định được xây dựng dựa trên một số lượng đặc trưng ngẫu nhiên được chọn ở mỗi node (phần tử) trong quá trình xây dựng cây. Điều này giúp tạo ra sự đa dạng giữa các cây và ngăn chặn việc overfitting.
 
 **Tính toán dự đoán:** Khi có một điểm dữ liệu cần dự đoán, mỗi cây sẽ cho ra một dự đoán riêng. Kết quả cuối cùng sẽ được xác định thông qua việc bầu chọn (voting) từ tất cả các cây. Trong trường hợp phân loại, lớp được chọn sẽ là lớp đa số được bầu chọn từ các cây.
-
-**2.2.2. XGBoost (Extreme Gradient Boosting)**
+<a name="xgboost-extreme-gradient-boosting"></a>
+#### 2.2.2. XGBoost (Extreme Gradient Boosting)
 
 XgBoost là một triển khai của Gradient Boosting đối với cây quyết định. Trong thuật toán này, cây quyết định được tạo ra dưới dạng tuần tự. Trọng số đóng một vai trò quan trọng trong XGBoost. Trọng số được gán cho tất cả các biến độc lập mà được đưa vào cây quyết định để dự đoán kết quả. Trọng số của biến được dự đoán sai bởi cây quyết định sẽ bị tăng lên sau đó được đưa vào cây dự đoán thứ hai. Những bộ phân loại/ bộ dự đoán sau đó sẽ tổng hợp lại để tạo ra một mô hình mạnh mẽ và chính xác.
-
-**2.2.3. LightGBM (Light Gradient Boosting Machine)**
+<a name="lightgbm-light-gradient-boosting-machine"></a>
+#### 2.2.3. LightGBM (Light Gradient Boosting Machine)
 
 LightGBM là gradient-boosting framework dựa trên decision trees để tăng hiểu quả của mô hình đồng thời giảm dung lượng bộ nhớ cần dùng, sử dụng hai kĩ thuật mới:
 
@@ -254,8 +255,8 @@ Các kỹ thuật này đáp ứng các hạn chế của thuật toán dựa tr
 ![Logo](images/Picture1.png)
 
 *(Nguồn: https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/*
-
-**2.3. Đánh giá một mô hình học máy**
+<a name="đánh-giá-một-mô-hình-học-máy"></a>
+### 2.3. Đánh giá một mô hình học máy
 ![Alt text](https://tapit.vn/wp-content/uploads/2021/06/Cac_phuong_phap_danh_gia_mo_hinh_AI_TAPIT.png)
 
 \- **True positives**: Các điểm Positive thực được nhận Đúng là Positive
@@ -265,26 +266,26 @@ Các kỹ thuật này đáp ứng các hạn chế của thuật toán dựa tr
 \- **True negatives**: Các điểm Negative thực được nhận Đúng là Negative
 
 \- **False negatives**: Các điểm Positive thực được nhận Sai là Negative
-
-**2.3.1.Recall:**
+<a name ="recall"> </a>
+#### 2.3.1.Recall:
 
 Recall đo lường tỷ lệ của các trường hợp dự đoán true positive so với tổng số trường hợp thực sự thuộc vào positive class. Recall rất hữu ích khi xử lý các tập dữ liệu mất cân bằng trong đó một class (positive hoặc negative) chiếm ưu thế hơn class kia vì nó tập trung vào khả năng của mô hình trong việc tìm kiếm các đối tượng của class mục tiêu.
-
-**2.3.2. Precision**
+<a name ="precision"> </a>
+#### 2.3.2. Precision
 
 Precision là thước đo tần suất mô hình học máy dự đoán chính xác positive class. Bạn có thể tính toán độ chính xác bằng cách chia số lượng dự đoán TruePositive cho tổng số trường hợp mà mô hình dự đoán là positive. Và khi đó 0< Precision <=1, Precision càng lớn có nghĩa là độ chính xác của các điểm tìm được càng cao.
 
 ![Alt text](https://cdn.prod.website-files.com/5d7b77b063a9066d83e1209c/639c3cc56bda8713d4a2f29c_precision-recall.webp)
-
-**2.3.3. F-1 Score**
+<a name ="f-1-score"> </a>
+#### 2.3.3. F-1 Score
 
 Trong thực tế nếu điều chỉnh model để tăng Recall quá mức có thể dẫn đến Precision giảm và ngược lại, cố điều chỉnh model để tăng Precision có thể làm giảm Recall. Làm sao để cân bằng 2 đại lượng này. Vậy thì bài toán mới được đặt ra là: giả sử chúng ta đang xây dựng một tập các model (để sau đó chọn ra model tốt nhất). Và chúng ta như “đứng giữa 2 con đường” khi lựa chọn các model sao cho cân bằng giữa Precision và Recall. Nhưng thật may có thêm một tham số nữa dung hòa giữa 2 cái và ta có thể căn vào đó để lựa chọn, đó là F-1 Score:
 
 ![Alt text](https://cdn-images-1.medium.com/max/1600/1*UJxVqLnbSj42eRhasKeLOA.png)
 
 Đến đây ta có thể căn cú vào F1 để chọn model, F1 càng cao thì càng tốt. Khi lý tưởng nhất thì F1 = 1 (khi Recall = Precision=1).
-
-**2.3.4. Accuracy**
+<a name ="accuracy"> </a>
+#### 2.3.4. Accuracy
 
 Accuracy (độ chính xác) trong machine learning là một trong những metric cơ bản để đánh giá hiệu suất của mô hình phân loại (classification model). Độ chính xác đánh giá khả năng của mô hình trong việc dự đoán đúng các nhãn/labels của dữ liệu kiểm thử. Nó là tỷ lệ giữa số lượng các dự đoán đúng và tổng số lượng các dự đoán được thực hiện trên tập dữ liệu kiểm thử.
 
@@ -313,27 +314,30 @@ Tính toán số liệu riêng cho mỗi lớp, sau đó lấy trung bình của
 Tính toán số liệu riêng cho mỗi lớp, sau đó lấy trung bình có trọng số của các metric này dựa trên số lượng mẫu của từng lớp. Weighted-average quan trọng hơn các lớp có số lượng mẫu lớn hơn khi tính toán metric.
 
 **CHƯƠNG 3. THỰC HIỆN ĐỀ TÀI**
-
-**3.1. Huấn luyện mô hình**
-
-**3.1.1. Cơ sở dữ liệu nguồn**
+<a name="huấn-luyện-mô-hình"></a>
+### 3.1. Huấn luyện mô hình
+<a name="cơ-sở-dữ-liệu-nguồn"> </a>
+#### 3.1.1. Cơ sở dữ liệu nguồn
 
 **Nguồn dữ liệu**: dựa vào bộ dữ liệu của tác giả MANU SIDDHARTHA đăng trên trang web <https://www.kaggle.com/>[ ](https://www.kaggle.com/)nhưng có chỉnh sửa lại các URL sao cho đầy đủ giao thức kết nối (HTTP, HTTPS,…) để có thể phù hợp với bài toán
 
 **Mô tả dữ liệu**: Dữ liệu gồm 2 trường url và type, tổng có 651191 mẫu đã được gắn nhãn là bengin, malware, defacement và phishing với phân phối như hình bên
-
-***3-1: Dataset***
 ![Logo](images/Picture2.jpg)
 
-***3-2: Trực quan hóa dữ liệu***
+***3-1: Dataset***
+
 ![Logo](images/Picture3.jpg)
-**3.1.2. Xử lí đầu vào**
+***3-2: Trực quan hóa dữ liệu***
+<a name="xử-lý-đầu-vào"> </a>
+#### 3.1.2. Xử lí đầu vào
 
 Bước đầu tiên trong việc xây dựng mô hình phân loại là trích xuất các đặc trưng cho mô hình. Thuật toán học máy chỉ có thể hoạt động với đầu vào số. Do đó, các chuỗi URL cần được mã hóa thành các vectơ số có ý nghĩa. Ta sẽ trích xuất các feature từ URL từ data từ đó giúp mô hình có thể dựa vào đó để được huấn luyện. Trong đề tài này, URL sẽ có tổng cộng 28 feature được liệt kê sau đây:
 ![Logo](images/Url_components.png)
-**3.3. Kết quả thực nghiệm**
 
-**3.3.1. Đánh giá các mô hình**
+<a name="kết-quả-thực-nghiệm"> </a>
+### 3.3. Kết quả thực nghiệm
+<a name="đánh-giá-các-mô-hình"> </a>
+#### 3.3.1. Đánh giá các mô hình
 
 **Đối với mô hình Random Forest:**
 
@@ -349,8 +353,8 @@ Accuracy : 0.9671
 
 Accuracy : 0.9637
 ![Logo](images/XGBOOST.png)
-
-**3.3.2. Xây dựng giao diện mô hình phát hiện URL độc hại**
+<a name="xây-dựng-giao-diện-mô-hình-phát-hiện-url-độc-hại></a>
+#### 3.3.2. Xây dựng giao diện mô hình phát hiện URL độc hại
 
 **Thuật toán học: Random forest**
 
