@@ -1,7 +1,6 @@
 <a name="br2"></a> 
 
-Ứng dụng học máy trong phát hiện URL độc hại – Lê Thị Thảo Vân - 20215664
-
+Ứng dụng học máy trong phát hiện URL độc hại
 **MỤC LỤC**
 # CHƯƠNG 1. GIỚI THIỆU ĐỀ TÀI
 1.1. [URL là gì?](#url-là-gì)  
@@ -117,19 +116,13 @@ Query string (Chuỗi truy vấn), còn được gọi là URL parameter (tham s
 
 \- Các tham số tìm kiếm cho phép người dùng tìm kiếm kết quả của công cụ tìm kiếm nội bộ của trang web.
 
-\- Lọc các tham số cho phép người dùng sắp xếp và lọc danh sách trên các trang
-
-danh mục theo nhiều thuộc tính khác nhau như giá cả, tình trạng còn hàng, kích
-
-thước, thương hiệu, vị trí và xếp hạng.
+\- Lọc các tham số cho phép người dùng sắp xếp và lọc danh sách trên các trang danh mục theo nhiều thuộc tính khác nhau như giá cả, tình trạng còn hàng, kích thước, thương hiệu, vị trí và xếp hạng.
 
 \- Các thông số theo dõi hỗ trợ theo dõi lưu lượng truy cập từ các chiến dịch và
 
 quảng cáo tiếp thị.
 
-\-
-
-Các tham số phân trang giúp tổ chức các trang lưu trữ blog và các chủ đề diễn đàn thành một chuỗi trang.
+\- Các tham số phân trang giúp tổ chức các trang lưu trữ blog và các chủ đề diễn đàn thành một chuỗi trang.
 
 ***f, Anchor***
 
@@ -289,6 +282,7 @@ Precision là thước đo tần suất mô hình học máy dự đoán chính 
 Trong thực tế nếu điều chỉnh model để tăng Recall quá mức có thể dẫn đến Precision giảm và ngược lại, cố điều chỉnh model để tăng Precision có thể làm giảm Recall. Làm sao để cân bằng 2 đại lượng này. Vậy thì bài toán mới được đặt ra là: giả sử chúng ta đang xây dựng một tập các model (để sau đó chọn ra model tốt nhất). Và chúng ta như “đứng giữa 2 con đường” khi lựa chọn các model sao cho cân bằng giữa Precision và Recall. Nhưng thật may có thêm một tham số nữa dung hòa giữa 2 cái và ta có thể căn vào đó để lựa chọn, đó là F-1 Score:
 
 ![Alt text](https://cdn-images-1.medium.com/max/1600/1*UJxVqLnbSj42eRhasKeLOA.png)
+
 Đến đây ta có thể căn cú vào F1 để chọn model, F1 càng cao thì càng tốt. Khi lý tưởng nhất thì F1 = 1 (khi Recall = Precision=1).
 
 **2.3.4. Accuracy**
@@ -335,15 +329,7 @@ Tính toán số liệu riêng cho mỗi lớp, sau đó lấy trung bình có t
 
 **3.1.2. Xử lí đầu vào**
 
-Bước đầu tiên trong việc xây dựng mô hình phân loại là trích xuất các đặc trưng
-
-cho mô hình. Thuật toán học máy chỉ có thể hoạt động với đầu vào số. Do đó, các chuỗi
-
-URL cần được mã hóa thành các vectơ số có ý nghĩa. Ta sẽ trích xuất các feature từ
-
-URL từ data từ đó giúp mô hình có thể dựa vào đó để được huấn luyện. Trong đề tài
-
-này, URL sẽ có tổng cộng 28 feature được liệt kê sau đây:
+Bước đầu tiên trong việc xây dựng mô hình phân loại là trích xuất các đặc trưng cho mô hình. Thuật toán học máy chỉ có thể hoạt động với đầu vào số. Do đó, các chuỗi URL cần được mã hóa thành các vectơ số có ý nghĩa. Ta sẽ trích xuất các feature từ URL từ data từ đó giúp mô hình có thể dựa vào đó để được huấn luyện. Trong đề tài này, URL sẽ có tổng cộng 28 feature được liệt kê sau đây:
 
 Thành phần URL
 
