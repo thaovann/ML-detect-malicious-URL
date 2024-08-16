@@ -8,10 +8,12 @@
 
 # CHƯƠNG 2. MACHINE LEARNING VÀ MỘT SỐ THUẬT TOÁN TRONG MACHINE LEARNING
 2.1. [Giới thiệu về machine learning](#giới-thiệu-về-machine-learning)  
+
 2.2. [Một số thuật toán học máy](#một-số-thuật-toán-học-máy)  
    - 2.2.1. [Random Forest](#random-forest)  
    - 2.2.2. [XGBoost (Extreme Gradient Boosting)](#xgboost-extreme-gradient-boosting)  
-   - 2.2.3. [LightGBM (Light Gradient Boosting Machine)](#lightgbm-light-gradient-boosting-machine)  
+   - 2.2.3. [LightGBM (Light Gradient Boosting Machine)](#lightgbm-light-gradient-boosting-machine)
+
 2.3. [Đánh giá một mô hình học máy](#đánh-giá-một-mô-hình-học-máy)  
    - 2.3.1. [Recall](#recall)  
    - 2.3.2. [Precision](#precision)  
@@ -261,7 +263,7 @@ Các kỹ thuật này đáp ứng các hạn chế của thuật toán dựa tr
 
 *(Nguồn: https://www.geeksforgeeks.org/lightgbm-light-gradient-boosting-machine/*
 <a name="đánh-giá-một-mô-hình-học-máy"></a>
-### 2.3. Đánh giá một mô hình học máy
+## 2.3. Đánh giá một mô hình học máy
 ![Alt text](https://tapit.vn/wp-content/uploads/2021/06/Cac_phuong_phap_danh_gia_mo_hinh_AI_TAPIT.png)
 
 \- **True positives**: Các điểm Positive thực được nhận Đúng là Positive
