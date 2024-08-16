@@ -43,6 +43,7 @@ Sau một thời gian tìm hiểu và thực hiện đề tài này, em đã xâ
 **1.1. URL là gì ?**
 
 URL viết tắt của Uniform Resource Locator, đơn giản là một địa chỉ dẫn tới một tài nguyên cụ thể và duy nhất trên Web. URL gồm nhiều phần khác nhau, có phần là bắt buộc, có phần là không bắt buộc có (chi tiết ở hình)
+![Alt text]([URL_or_path_to_image "Optional title"](https://media.geeksforgeeks.org/wp-content/uploads/20240123162739/url-parts-copy-(1).webp))
 
 ***1-0-1: URL** (nguồn: develop.mozilla.org)*
 
