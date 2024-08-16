@@ -40,7 +40,7 @@ Sau một thời gian tìm hiểu và thực hiện đề tài này, em đã xâ
 
 **CHƯƠNG 1. GIỚI THIỆU ĐỀ TÀI**
 
-**1.1. URL là gì ?**
+[**1.1. URL là gì ?**] (#url-là-gì)  
 
 URL viết tắt của Uniform Resource Locator, đơn giản là một địa chỉ dẫn tới một tài nguyên cụ thể và duy nhất trên Web. URL gồm nhiều phần khác nhau, có phần là bắt buộc, có phần là không bắt buộc có (chi tiết ở hình)
 ![Alt text](https://media.geeksforgeeks.org/wp-content/uploads/20240123162739/url-parts-copy-(1).webp "Optional title")
@@ -137,7 +137,7 @@ Các tham số phân trang giúp tổ chức các trang lưu trữ blog và các
 
 Ví dụ: trong URL https://viccisw.com/page#section, phần #section là điểm neo. Khi URL này được truy cập, trình duyệt web thường sẽ cuộn xuống phần trang web được xác định bởi anchor, miễn là trang web đó có một phần tử có thuộc tính ID hoặc tên tương ứng với giá trị của anchor. Anchor thường được sử dụng để hướng người dùng đến một phần cụ thể của trang web, đặc biệt là trong các tài liệu hoặc bài viết dài hơn, bằng cách liên kết trực tiếp đến một phần cụ thể trong trang.
 
-**1.2. Một số kĩ thuật tấn công bằng URLs ?**
+[**1.2. Một số kĩ thuật tấn công bằng URLs ?**] (#một-số-kỹ-thuật-tấn-công-bằng-urls)  
 
 Kĩ thuật tấn công là những phương thức hoặc cơ chế được sử dụng bởi kẻ tấn công để có truy cập trái phép vào dữ liệu của người dùng hoặc gây ra tổn hại đến hệ thống bị tấn công. Kẻ tấn công có thể sử dụng URLs độc hại để triển khai việc tấn công trên. URLs độc hại có thể được phân loại thành spam, phishing, malware hoặc defacement URLs. Phần lớn các cuộc tấn công mạng xảy ra khi người dùng nhấp vào các URL độc hại. Khi URL bị khai thác cho các mục đích khác ngoài việc truy cập các tài nguyên hợp pháp trên Internet, chúng sẽ gây ra mối đe dọa đối với tính toàn vẹn, bảo mật và tính khả dụng của dữ liệu [1]. Trong đề tài này thực hiện phân loại các URL thành bengin, phishing, malware, defacement. Sau đây là chi tiết về các loại URL này
 
@@ -157,11 +157,9 @@ URL này dẫn người dùng tới một trang web độc hại mà điển hì
 
 Defacement URL chuyển hướng người dùng tới một trang web đã bị tin tặc thay đổi ở một hoặc nhiều khía cạnh như giao diện hay một số nội dung của trang web.[4] Kiểu tấn công này xảy ra khi kẻ tấn công phát hiện ra một lỗ hổng của website và lợi dụng nó nhằm gây hại cho website và sửa đổi nội dung trên trang web mà không có sự cho phép của chủ sở hữu. Về mặt kĩ thuật thì việc này gọi là xâm nhập một trang web.[2]
 
-**CHƯƠNG 2. MACHINE LEARNING VÀ MỘT SỐ THUẬT**
+**CHƯƠNG 2. MACHINE LEARNING VÀ MỘT SỐ THUẬT TOÁN TRONG MACHINE LEARNING**
 
-**TOÁN TRONG MACHINE LEARNING**
-
-**2.1. Giới thiệu về machine learning**
+[**2.1. Giới thiệu về machine learning**](#giới-thiệu-về-machine-learning) 
 
 Machine learning (Học máy) là 1 nhánh con của trí tuệ nhân tạo (AI) và khoa học máy tính. Machine learning sử dụng data, thuật toán đầu vào để tự xử lý các vấn đề và liên tục tối ưu để tạo ra những phương án xử lý mới, hiệu quả hơn; giống như cách thức tự học của não bộ con người.[4]
 Thống kê và dự đoán là 2 mục đích chính của việc áp dụng machine learning vì thế hệ thống này được thiết kế với khả năng tự nghiên cứu, cải tiến bản thân dựa trên những nguyên lý được lập trình ban đầu. Trong nhiều trường hợp machine learning sẽ tự đề xuất ra giải pháp tối ưu mà không cần được lập trình trước.[4]Machine learning sử dụng data, thuật toán đầu vào để tự xử lý các vấn đề và liên tục tối ưu để tạo ra những phương án xử lý mới, hiệu quả hơn; giống như cách thức tự học của não bộ con người.[4]
